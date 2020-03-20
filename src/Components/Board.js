@@ -15,10 +15,6 @@ export default class Board extends React.Component {
         this.planMinesOnBoard(bricks, mines);
     }
 
-    demoMethod(){
-        this.props.sendData(1);
-    }
-
     bricksNumberInitialize(height, width) {
         return [...Array(height)].map((_, row) =>
             [...Array(width)].map((_, column) => ({
@@ -140,7 +136,6 @@ export default class Board extends React.Component {
 
         brick.isFlagged ? brick.isFlagged = false : brick.isFlagged = true;
         let updatedMinesToFlag = brick.isFlagged ? this.state.minesLeft - 1 : this.state.minesLeft + 1;
-        this.demoMethod();
         this.setState({
             minesLeft: updatedMinesToFlag
         });
